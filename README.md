@@ -59,30 +59,30 @@ In the second stage, the XGBoost model uses features such `candidate_article_id`
 - **Model Evalution**
 The model's performance was evaluated using *Normalised Discounted Cumulative Gain (NDCG)*. NDCG provides a more direct and reliable measure of how well a recommender system ranks relevant articles at the top, making it more suitable for this project compared with CTR. The use of CTR and average time spent are complementary metrics to gain a holistic understanding of user behaviour.
 
-- Current Results:
+- **Current Results**:
 The prototype achieved an NDCG score of 0.99. However, it clearly shows that it is overfitting. This outcome could have happened primarily due to the limited training dataset and few features. For example, Covington and colleagues (2016) had over 100 features to achieve excellent results.
 
-NB: I have prioritised demonstrating a functional model with diverse processing steps over achieving optimal performance and refactored code followed by deployment.
+**NB**: I have prioritised demonstrating a functional model with diverse processing steps over achieving optimal performance and refactored code followed by deployment.
 
 
 ## Future Considerations
-- Enhanced data ingestion
+- **Enhanced data ingestion**
 To address the limitations in data collection, the platform could track user engagement metrics (e.g. scroll depth, likes, comments, shares) and subscription metrics (DAU/MAU ratio) to improve user-item filtering and recommendation. A 'healthy' DAU/MAU ratio (aka stickiness) indicates strong user engagement, and therefore, potential articles to be recommended.
 
-- Other models
+- **Other models**
   - Move from XGBoost to a deep learning model using transformers architecture (Vaswani *et al,* 2017). These models can capture more complex patterns and interactions in the data, are better at handling high-dimensional data and non-linear relationships. There is
   - There is also examples of using Large Language Models (LLM) for recommender systems, see Lin *et al,* (2023). However, LLMs might be a bit unstable with hallucinations, let alone provide accurately reflecting human preferences. In this case, Reinforcement Learning from Human Feedback could help (Rafailov *et al,* 2024).
 
   These ideas could offer more personalised recommendations and user satisfaction over traditional methods.
 
-- Low-Rank Quantization
+- **Low-Rank Quantization**
 To improve the efficiency and scalability of the model, implementing low-rank quantization can significantly reduce the computational load and storage requirements. This technique can approximate large matrices used in collaborative filtering, thereby accelerating both training and inference stages without substantial loss in accuracy.
 
--  Rolling Updates and A/B Testing
+-  **Rolling Updates and A/B Testing**
 Implementing rolling updates can reduce downtime by gradually deploying new models, ensuring continuous service availability. A/B testing can evaluate the performance of different model versions in real-world scenarios, providing insights into user preferences and the effectiveness of new features.
 
 Finally, below is an overview of a future system for a recommender system:
-![Suggested system design](docs/recommender-system/recommender-system.png)
+![Suggested system design](docs/recommender-system.png)
 
 
 ### References
