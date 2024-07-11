@@ -60,7 +60,7 @@ In the second stage, the XGBoost model uses features such `candidate_article_id`
 The model's performance was evaluated using *Normalised Discounted Cumulative Gain (NDCG)*. NDCG provides a more direct and reliable measure of how well a recommender system ranks relevant articles at the top, making it more suitable for this project compared with CTR. The use of CTR and average time spent are complementary metrics to gain a holistic understanding of user behaviour.
 
 - **Current Results**:
-The prototype achieved an NDCG score of 0.99. However, it clearly shows that it is overfitting. This outcome could have happened primarily due to the limited training dataset and few features. For example, Covington and colleagues (2016) had over 100 features to achieve excellent results.
+The prototype achieved an NDCG score of 0.96. However, it clearly shows that it is overfitting. This outcome could have happened primarily due to the limited training dataset and few features. For example, Covington and colleagues (2016) had over 100 features to achieve excellent results.
 
 **NB**: I have prioritised demonstrating a functional model with diverse processing steps over achieving optimal performance and refactored code followed by deployment.
 
